@@ -9,6 +9,13 @@ class App < Sinatra::Base
     end
     
     post '/teams' do
+      @team = Team.new(params)
+      
+      params[:team][:member].each do |args|
+        Superhero.new(args)
+      end
+      
+      @members = Superhero.all
       erb :team
     end
     
