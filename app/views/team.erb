@@ -1,5 +1,13 @@
 <h1>Your Team</h1>
 
-<h2><%=@team</h2>
+<h2><%=@team.name%></h2>
+<h3><%=@team.motto%></h3>
+
+
+<%=@members.each do |member|%>
+  <h2>member.name</h2>
+  <h3>member.power</h3>
+  <h3>member.bio</h3>
+<%end%>
 
 
